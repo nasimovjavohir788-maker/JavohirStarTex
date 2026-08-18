@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javohir Star Tex - Rasmiy Onlayn Do'kon</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Ikonkalari -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Brend Styling -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBg: '#F9F5F0',
+                        brandPrimary: '#1A2332',
+                        brandAccent: '#D88A8A',
+                        brandSecondary: '#6B8E85'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brandBg text-brandPrimary font-sans antialiased selection:bg-brandAccent selection:text-white select-none">
+
+    <!-- 1. NAVIGATION BAR -->
+    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+
+            <!-- LOGO INTEGRATSIYASI -->
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl overflow-hidden shadow-md border-2 border-white flex-shrink-0">
+                    <img src="photo_2025-02-28_11-41-57.jpg" alt="Javohir Star Tex Logo" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="font-black text-xl tracking-wide text-brandPrimary">JAVOHIR STAR TEX</h1>
+                    <p class="text-[10px] text-brandAccent font-bold uppercase tracking-widest">Sifat va Shinamlik</p>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex gap-5 text-xs font-bold text-gray-600 uppercase tracking-wider">
+                <a href="#hero" class="hover:text-brandAccent transition">Bosh sahifa</a>
+                <a href="#features" class="hover:text-brandAccent transition">Afzalliklar</a>
+                <a href="#slider-section" class="hover:text-brandAccent transition">Katalog</a>
+                <a href="#telegram-channel" class="hover:text-brandAccent transition">Telegram</a>
+                <a href="#branches" class="hover:text-brandAccent transition">Filiallar</a>
+                <a href="#reviews" class="hover:text-brandAccent transition">Sharhlar</a>
+                <a href="#contact" class="hover:text-brandAccent transition">Bog'lanish</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button id="admin-btn" onclick="toggleAdminPanel()" class="hidden bg-gray-100 text-brandPrimary text-xs font-bold px-4 py-2.5 rounded-xl hover:bg-gray-200 transition items-center gap-2">
+                    <i class="fa-solid fa-gear text-brandAccent"></i> Admin Panel
+                </button>
+                <button onclick="openLoginModal()" class="bg-brandPrimary text-white text-xs font-bold px-5 py-2.5 rounded-xl hover:bg-brandSecondary transition shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-user-shield"></i> Kirish
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO BO'LIMI (VIDEO BACKGROUND) -->
+    <section id="hero" class="relative py-24 lg:py-32 overflow-hidden min-h-[520px] flex items-center">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="video_2026-08-15_13-44-31 (1).mp4" type="video/mp4">
+        </video>
+
+        <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-2xl">
+                <span class="bg-brandAccent text-white font-bold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                    Milliy va Zamonaviy Matolar
+                </span>
+                <h2 class="text-4xl sm:text-6xl font-black text-white mt-6 leading-tight">
+                    Xonadoningiz uchun <span class="text-brandAccent">Mukammal</span> To'qimachilik
+                </h2>
+                <p class="text-gray-200 mt-6 text-sm sm:text-lg leading-relaxed">
+                    Javohir Star Tex — yuqori sifatli yopinchiqlar, prostina va ortopedik yostiqlar bilan uyingizga shinamlik va qulaylik ulashadi.
+                </p>
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="#slider-section" class="bg-brandAccent text-white font-bold text-sm px-8 py-3.5 rounded-xl hover:bg-brandSecondary transition shadow-lg flex items-center gap-2">
+                        <span>Katalogga o'tish</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ANIMATION GROWTH NUMBERS -->
+    <section id="stats" class="bg-white py-12 border-y border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6 text-center">
+            <div>
+                <h3 class="text-2xl sm:text-3xl font-black text-brandPrimary counter" data-target="15000">0</h3>
+                <p class="text-[11px] text-gray-500 font-semibold mt-1">Mamnun Mijozlar</p>
+            </div>
+            <div>
+                <h3 class="text-2xl sm:text-3xl font-black text-brandPrimary counter" data-target="120">0</h3>
+                <p class="text-[11px] text-gray-500 font-semibold mt-1">Mahsulot Turlari</p>
+            </div>
+            <div>
+                <h3 class="text-2xl sm:text-3xl font-black text-brandPrimary counter" data-target="99">0</h3>
+                <p class="text-[11px] text-gray-500 font-semibold mt-1">% Sifat Kafolati</p>
+            </div>
+            <div>
+                <h3 class="text-2xl sm:text-3xl font-black text-brandPrimary counter" data-target="24">0</h3>
+                <p class="text-[11px] text-gray-500 font-semibold mt-1">Soat Dastavka</p>
+            </div>
+            <div class="border-t sm:border-t-0 border-gray-100 pt-4 sm:pt-0">
+                <h3 class="text-2xl sm:text-3xl font-black text-brandAccent counter" data-target="12">0</h3>
+                <p class="text-[11px] text-gray-500 font-semibold mt-1">Yillik Tajriba</p>
+            </div>
+            <div class="border-t sm:border-t-0 border-gray-100 pt-4 sm:pt-0">
+                <h3 class="text-2xl sm:text-3xl font-black text-brandAccent counter" data-target="15">0</h3>
+                <p class="text-[11px] text-gray-500 font-semibold mt-1">Eksport Davlatlari</p>
+            </div>
+            <div class="border-t sm:border-t-0 border-gray-100 pt-4 sm:pt-0 col-span-2 sm:col-span-1">
+                <h3 class="text-2xl sm:text-3xl font-black text-brandAccent counter" data-target="500000">0</h3>
+                <p class="text-[11px] text-gray-500 font-semibold mt-1">Metr Mato (Yil)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AFZALLIKLAR -->
+    <section id="features" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brandAccent font-bold text-xs uppercase tracking-widest">Nega Aynan Biz?</span>
+                <h2 class="text-3xl font-extrabold text-brandPrimary mt-2">Bizning Ustunliklarimiz</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition text-center">
+                    <div class="w-16 h-16 bg-brandAccent/10 text-brandAccent rounded-2xl flex items-center justify-center mx-auto text-2xl mb-4">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandPrimary mb-2">100% Tabiiy Paxta</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Barcha matolarimiz ekologik toza va teri uchun xavfsiz bo'lgan organik paxtadan tayyorlanadi.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition text-center">
+                    <div class="w-16 h-16 bg-brandSecondary/10 text-brandSecondary rounded-2xl flex items-center justify-center mx-auto text-2xl mb-4">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandPrimary mb-2">Tezkor Yetkazib Berish</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">O'zbekiston bo'ylab barcha viloyat va tumanlarga tezkor va xavfsiz dastavka xizmati mavjud.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition text-center">
+                    <div class="w-16 h-16 bg-brandPrimary/10 text-brandPrimary rounded-2xl flex items-center justify-center mx-auto text-2xl mb-4">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-brandPrimary mb-2">Xalqaro Sifat Sertifikati</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Mahsulotlarimiz bir necha bosqichli sifat nazoratidan o'tadi va kafolat beriladi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ADMIN PANEL (YANGI BOT BOSHGARUVI BILAN) -->
+    <div id="admin-panel" class="hidden max-w-7xl mx-auto px-4 my-8">
+        <div class="p-6 bg-white rounded-3xl shadow-xl border border-brandAccent/20 grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Slayd qo'shish formasi -->
+            <div>
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-md font-bold text-brandPrimary"><i class="fa-solid fa-plus text-brandAccent mr-2"></i> Yangi Slayd Qo'shish</h3>
+                </div>
+                <form onsubmit="event.preventDefault(); addNewSlideFromForm();" class="grid grid-cols-1 gap-3">
+                    <input type="text" id="new-title" placeholder="Mahsulot nomi" required class="p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-brandAccent">
+                    <input type="text" id="new-category" placeholder="Kategoriya (Yopinchiq, Prostina, Yostiq)" required class="p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-brandAccent">
+                    <input type="number" id="new-price" placeholder="Narxi (UZS)" required class="p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-brandAccent">
+                    <input type="url" id="new-image" placeholder="Rasm URL havolasi" required class="p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-brandAccent">
+                    <textarea id="new-desc" placeholder="Mahsulot haqida tavsif..." required class="p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-brandAccent"></textarea>
+                    <button type="submit" class="bg-brandPrimary text-white font-bold py-3 rounded-xl text-xs hover:bg-brandSecondary transition shadow-md">
+                        Slayderga Qo'shish
+                    </button>
+                </form>
+            </div>
+
+            <!-- PROMOKOD BOSHQUROV PANEL -->
+            <div class="border-t lg:border-t-0 lg:border-l border-gray-100 pt-6 lg:pt-0 lg:pl-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-md font-bold text-brandPrimary"><i class="fa-solid fa-wand-magic-sparkles text-brandAccent mr-2"></i> Promokod Sozlamalari</h3>
+                </div>
+
+                <div class="mb-4">
+                    <span class="text-[11px] font-bold text-gray-500 mb-2 block">Tezkor Shablonlar:</span>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="button" onclick="setPresetPromo('TELEGRAM10', 10)" class="bg-gray-100 hover:bg-brandAccent hover:text-white text-gray-700 text-[10px] font-bold px-2.5 py-1 rounded-lg transition border">
+                            TELEGRAM10 (-10%)
+                        </button>
+                        <button type="button" onclick="setPresetPromo('JAVOHIR20', 20)" class="bg-gray-100 hover:bg-brandAccent hover:text-white text-gray-700 text-[10px] font-bold px-2.5 py-1 rounded-lg transition border">
+                            JAVOHIR20 (-20%)
+                        </button>
+                        <button type="button" onclick="setPresetPromo('MEGA30', 30)" class="bg-gray-100 hover:bg-brandAccent hover:text-white text-gray-700 text-[10px] font-bold px-2.5 py-1 rounded-lg transition border">
+                            MEGA30 (-30%)
+                        </button>
+                    </div>
+                </div>
+
+                <form onsubmit="event.preventDefault(); createPromoCode();" class="grid grid-cols-1 gap-2.5">
+                    <input type="text" id="admin-promo-name" placeholder="Promokod Nomi (JAVOHIR20)" required class="p-2.5 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-brandAccent font-mono font-bold uppercase">
+                    <input type="number" id="admin-promo-percent" min="1" max="90" placeholder="Chegirma % (masalan: 20)" required class="p-2.5 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-brandAccent">
+                    <button type="submit" class="bg-brandAccent text-white font-bold py-2.5 rounded-xl text-xs hover:bg-brandSecondary transition shadow-md">
+                        Promokodni Saqlash
+                    </button>
+                </form>
+
+                <div class="mt-4 border-t border-gray-100 pt-3">
+                    <h4 class="text-xs font-bold text-brandPrimary mb-2 flex justify-between">
+                        <span>Aktiv Promokodlar</span>
+                        <span id="promo-count-badge" class="bg-brandAccent/20 text-brandAccent text-[10px] px-2 py-0.5 rounded-full font-bold">1 ta</span>
+                    </h4>
+                    <div id="promo-list-container" class="space-y-1.5 max-h-28 overflow-y-auto pr-1"></div>
+                </div>
+            </div>
+
+            <!-- YANGI BO'LIM 1: ADMIN TELEGRAM BOT VA XABAR BOSHGARUVI -->
+            <div class="border-t lg:border-t-0 lg:border-l border-gray-100 pt-6 lg:pt-0 lg:pl-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-md font-bold text-brandPrimary"><i class="fa-paper-plane text-sky-500 mr-2"></i> Telegram Bot Integratsiyasi</h3>
+                    <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-red-500"><i class="fa-solid fa-xmark text-lg"></i></button>
+                </div>
+
+                <p class="text-[11px] text-gray-500 mb-3">Buyurtmalar va xabarlar avtomatik boradigan Telegram Bot sozlamalari:</p>
+
+                <form onsubmit="event.preventDefault(); saveBotSettings();" class="grid grid-cols-1 gap-3">
+                    <div>
+                        <label class="block text-[10px] font-bold text-gray-500 mb-1">Bot Token</label>
+                        <input type="password" id="bot-token" value="123456789:ABCdefGhIJKlmNoPQRstUVwxyZ" required class="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-mono focus:outline-none focus:border-brandAccent">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-gray-500 mb-1">Admin Chat ID</label>
+                        <input type="text" id="admin-chat-id" value="987654321" required class="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-mono focus:outline-none focus:border-brandAccent">
+                    </div>
+                    <button type="submit" class="bg-sky-500 text-white font-bold py-2.5 rounded-xl text-xs hover:bg-sky-600 transition shadow-md flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        <span>Sozlamalarni Saqlash</span>
+                    </button>
+                </form>
+
+                <div class="mt-4 p-3 bg-sky-50 rounded-2xl border border-sky-100">
+                    <span class="text-[11px] font-bold text-sky-800 block mb-1"><i class="fa-solid fa-circle-info mr-1"></i> Bot Holati:</span>
+                    <p class="text-[10px] text-sky-600 leading-relaxed">Bot muvaffaqiyatli ulangan. Saytdan tushgan har bir buyurtma va xabar belgilangan Telegram akkauntingizga boradi.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 5. SLAYDER BO'LIMI -->
+    <section id="slider-section" class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <span class="text-brandAccent font-bold text-xs uppercase tracking-widest">Katalog</span>
+                    <h2 class="text-3xl font-extrabold text-brandPrimary mt-1">Ommabop Mahsulotlar</h2>
+                </div>
+            </div>
+
+            <div class="swiper mySwiper p-4 bg-white rounded-3xl border border-gray-100 shadow-sm">
+                <div class="swiper-wrapper" id="swiper-dynamic-wrapper">
+                    <!-- Dynamic Items -->
+                </div>
+                <div class="swiper-pagination mt-6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YANGI BO'LIM A: TELEGRAM RASMIY KANAL VA QO'LLAB-QUVVATLASH (USER SIDE) -->
+    <section id="telegram-channel" class="py-16 bg-sky-50/60 border-y border-sky-100 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white p-8 sm:p-12 rounded-3xl border border-sky-100 shadow-lg relative z-10">
+                <div>
+                    <span class="bg-sky-500 text-white font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-3">
+                        <i class="fa-paper-plane mr-1"></i> Rasmiy Telegram
+                    </span>
+                    <h2 class="text-3xl font-black text-brandPrimary leading-tight">
+                        Telegram Kanalimizga A'zo Bo'ling!
+                    </h2>
+                    <p class="text-gray-500 mt-3 text-xs sm:text-sm leading-relaxed">
+                        Yangi kelgan tovarlar, eksklyuziv matolar, cheklangan chegirmalar va jonli video sharhlarni birinchilardan bo'lib Telegram kanalimizda kuzatib boring.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-4 items-center">
+                        <a href="https://t.me/JavohirStarTex" target="_blank" class="bg-sky-500 text-white font-bold text-xs px-6 py-3.5 rounded-xl hover:bg-sky-600 transition shadow-md flex items-center gap-2">
+                            <i class="fa-paper-plane text-sm"></i>
+                            <span>Kanalga Qo'shilish</span>
+                        </a>
+                        <span class="text-xs font-bold text-sky-600 bg-sky-100 px-3 py-2 rounded-xl">
+                            <i class="fa-solid fa-users mr-1"></i> 12,400+ A'zolar
+                        </span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-brandBg p-5 rounded-2xl border border-gray-100 text-center">
+                        <i class="fa-solid fa-bell text-sky-500 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-xs text-brandPrimary">Tezkor Bildirishnoma</h4>
+                        <p class="text-[10px] text-gray-500 mt-1">Yangi tovarlar haqida darhol xabar topasiz</p>
+                    </div>
+                    <div class="bg-brandBg p-5 rounded-2xl border border-gray-100 text-center">
+                        <i class="fa-solid fa-tags text-brandAccent text-2xl mb-2"></i>
+                        <h4 class="font-bold text-xs text-brandPrimary">Yopiq Promokodlar</h4>
+                        <p class="text-[10px] text-gray-500 mt-1">Faqat kanal a'zolari uchun maxsus chegirmalar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YANGI BO'LIM B: FILIALLAR VA SHOWROOM LOKATSIYASI -->
+    <section id="branches" class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brandAccent font-bold text-xs uppercase tracking-widest">Tashrif Buyuring</span>
+                <h2 class="text-3xl font-extrabold text-brandPrimary mt-2">Bizning Do'konlarimiz</h2>
+                <p class="text-xs text-gray-500 mt-2">Mahsulotlarni o'z ko'zingiz bilan ko'rish va ushlab ko'rish uchun Showroomlarimizga taklif etamiz</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 1-Filial -->
+                <div class="bg-brandBg p-6 rounded-3xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="bg-brandPrimary text-white font-bold text-[10px] px-2.5 py-1 rounded-lg">Bosh Do'kon</span>
+                                <h3 class="font-black text-lg text-brandPrimary mt-2">Toshkent Showroom</h3>
+                            </div>
+                            <i class="fa-solid fa-store text-2xl text-brandAccent"></i>
+                        </div>
+                        <p class="text-xs text-gray-600 mb-2"><i class="fa-solid fa-location-dot text-brandAccent mr-2"></i> Toshkent sh., Chilonzor tumani, Bunyodkor ko'chasi 15-uy</p>
+                        <p class="text-xs text-gray-600 mb-2"><i class="fa-solid fa-clock text-brandSecondary mr-2"></i> Dushanba - Yakshanba: 09:00 - 20:00</p>
+                        <p class="text-xs text-gray-600"><i class="fa-solid fa-phone text-sky-500 mr-2"></i> +998 90 123 45 67</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200/60 flex justify-between items-center">
+                        <span class="text-[11px] font-bold text-green-600"><i class="fa-solid fa-circle text-[8px] mr-1"></i> Hozir Ochiq</span>
+                        <a href="https://maps.google.com" target="_blank" class="bg-white border border-gray-200 text-brandPrimary text-xs font-bold px-4 py-2 rounded-xl hover:bg-brandPrimary hover:text-white transition">
+                            Xaritadan Ko'rish
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2-Filial -->
+                <div class="bg-brandBg p-6 rounded-3xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="bg-brandSecondary text-white font-bold text-[10px] px-2.5 py-1 rounded-lg">Samarqand Filiali</span>
+                                <h3 class="font-black text-lg text-brandPrimary mt-2">Samarqand Markaziy Do'kon</h3>
+                            </div>
+                            <i class="fa-solid fa-shop text-2xl text-brandSecondary"></i>
+                        </div>
+                        <p class="text-xs text-gray-600 mb-2"><i class="fa-solid fa-location-dot text-brandAccent mr-2"></i> Samarqand sh., Dagbitskaya ko'chasi 42-uy</p>
+                        <p class="text-xs text-gray-600 mb-2"><i class="fa-solid fa-clock text-brandSecondary mr-2"></i> Dushanba - Shanba: 09:00 - 19:00</p>
+                        <p class="text-xs text-gray-600"><i class="fa-solid fa-phone text-sky-500 mr-2"></i> +998 66 987 65 43</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-200/60 flex justify-between items-center">
+                        <span class="text-[11px] font-bold text-green-600"><i class="fa-solid fa-circle text-[8px] mr-1"></i> Hozir Ochiq</span>
+                        <a href="https://maps.google.com" target="_blank" class="bg-white border border-gray-200 text-brandPrimary text-xs font-bold px-4 py-2 rounded-xl hover:bg-brandPrimary hover:text-white transition">
+                            Xaritadan Ko'rish
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MIJOZLAR SHARHLARI -->
+    <section id="reviews" class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brandAccent font-bold text-xs uppercase tracking-widest">Fikrlar</span>
+                <h2 class="text-3xl font-extrabold text-brandPrimary mt-2">Mijozlarimiz Nima Deyishadi?</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-brandBg p-6 rounded-2xl border border-gray-100">
+                    <div class="flex items-center text-yellow-400 gap-1 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 italic mb-4 leading-relaxed">"Javohir Star Tex yopinchiqlarini xarid qilgandim. Sifati juda a'lo, necha marta yuvilsa ham rangi va yumshoqligi o'zgarmaydi."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-brandAccent/20 text-brandAccent font-bold flex items-center justify-center text-xs">SM</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandPrimary">Sevara Mahmudova</h4>
+                            <span class="text-[10px] text-gray-400">Toshkent sh.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brandBg p-6 rounded-2xl border border-gray-100">
+                    <div class="flex items-center text-yellow-400 gap-1 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 italic mb-4 leading-relaxed">"Ortopedik yostiqlar haqiqatan ham juda qulay. Uyqu sifati yaxshilandi. Dastavka ham juda tez keldi."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-brandSecondary/20 text-brandSecondary font-bold flex items-center justify-center text-xs">AK</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandPrimary">Aziz Karimov</h4>
+                            <span class="text-[10px] text-gray-400">Samarqand sh.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brandBg p-6 rounded-2xl border border-gray-100">
+                    <div class="flex items-center text-yellow-400 gap-1 text-xs mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-xs text-gray-600 italic mb-4 leading-relaxed">"Prostinalar o'lchami to'ppa-to'g'ri keldi va materiali juda yumshoq. Barchaga tavsiya qilaman!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-brandPrimary/20 text-brandPrimary font-bold flex items-center justify-center text-xs">NR</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brandPrimary">Nargiza Rahmatova</h4>
+                            <span class="text-[10px] text-gray-400">Farg'ona sh.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMOKOD YOZISH VA "YUBORISH" BO'LIMI -->
+    <section id="special-offer" class="py-16 bg-gradient-to-r from-brandPrimary via-slate-800 to-brandPrimary text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center bg-white/5 backdrop-blur-lg rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl">
+                <div>
+                    <span class="bg-brandAccent text-white font-black text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block mb-4 shadow-md">
+                        <i class="fa-solid fa-paper-plane mr-1"></i> Special Offer
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Promokodni Kiriting va Chegirma Oling!
+                    </h2>
+                    <p class="text-gray-300 mt-4 text-xs sm:text-sm leading-relaxed">
+                        Kanalimizda e'lon qilingan maxsus promokodni quyidagi maydonga yozing va <b>"Yuborish"</b> tugmasini bosing. Promokod to'g'ri bo'lsa, chegirmangiz darhol faollashadi!
+                    </p>
+
+                    <div class="mt-6 space-y-3 max-w-md">
+                        <div class="flex items-center gap-2 bg-black/40 p-2 rounded-2xl border border-white/10">
+                            <input type="text" id="user-promo-input" placeholder="Promokodni yozing..." class="bg-transparent text-white font-mono font-bold px-3 py-2 text-sm uppercase focus:outline-none w-full placeholder-gray-500">
+                            <button onclick="applyPromoCode()" class="bg-brandAccent hover:bg-brandSecondary text-white text-xs font-bold px-6 py-3 rounded-xl transition shadow-md whitespace-nowrap flex items-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Yuborish</span>
+                            </button>
+                        </div>
+                        <div id="promo-result-message" class="text-xs font-bold hidden"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/10 p-5 rounded-2xl border border-white/10 text-center hover:bg-white/15 transition">
+                        <i class="fa-solid fa-gift text-brandAccent text-2xl mb-2"></i>
+                        <h4 class="font-bold text-sm text-white">Xushomad Sovg'a</h4>
+                        <p class="text-[11px] text-gray-300 mt-1">Har bir yirik buyurtmaga maxsus sovg'a</p>
+                    </div>
+                    <div class="bg-white/10 p-5 rounded-2xl border border-white/10 text-center hover:bg-white/15 transition">
+                        <i class="fa-solid fa-shield-halved text-brandSecondary text-2xl mb-2"></i>
+                        <h4 class="font-bold text-sm text-white">Sifat Kafolati</h4>
+                        <p class="text-[11px] text-gray-300 mt-1">100% qaytarish va almashtirish huquqi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOG'LANISH VA ALOQA -->
+    <section id="contact" class="py-16 bg-brandBg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brandAccent font-bold text-xs uppercase tracking-widest">Siz Bilan Muloqotda</span>
+                <h2 class="text-3xl font-extrabold text-brandPrimary mt-2">Biz Bilan Bog'laning</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brandAccent/10 text-brandAccent rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-400 uppercase">Telefon</h4>
+                            <p class="text-sm font-bold text-brandPrimary mt-0.5">+998 90 123 45 67</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brandSecondary/10 text-brandSecondary rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                            <i class="fa-paper-plane text-brandSecondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-400 uppercase">Telegram Bot</h4>
+                            <p class="text-sm font-bold text-brandPrimary mt-0.5">@JavohirStarTex_Bot</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <h3 class="text-lg font-bold text-brandPrimary mb-4">Tezkor Xabar Qoldirish</h3>
+                    <form onsubmit="handleContactSubmit(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Ismingiz" required class="p-3.5 rounded-xl border border-gray-200 text-xs focus:border-brandAccent focus:outline-none">
+                        <input type="tel" placeholder="+998 (__) ___-__-__" required class="p-3.5 rounded-xl border border-gray-200 text-xs focus:border-brandAccent focus:outline-none">
+                        <textarea placeholder="Xabaringiz yoki mahsulot bo'yicha savolingiz..." rows="4" required class="sm:col-span-2 p-3.5 rounded-xl border border-gray-200 text-xs focus:border-brandAccent focus:outline-none"></textarea>
+                        <button type="submit" class="sm:col-span-2 bg-brandPrimary text-white font-bold py-3.5 rounded-xl text-xs hover:bg-brandSecondary transition shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Xabarni Yuborish</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. LOGIN MODAL -->
+    <div id="login-modal" class="fixed inset-0 z-50 bg-brandPrimary/60 backdrop-blur-sm flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white w-full max-w-md p-8 rounded-3xl shadow-2xl relative border border-gray-100">
+            <button onclick="closeLoginModal()" class="absolute top-5 right-5 text-gray-400 hover:text-brandPrimary">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 rounded-2xl mx-auto overflow-hidden shadow-md mb-3 border-2 border-brandBg">
+                    <img src="photo_2025-02-28_11-41-57.jpg" alt="Javohir Star Tex Logo" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-extrabold text-brandPrimary">Profilga Kirish</h3>
+                <p class="text-xs text-gray-500 mt-1">Davom etish uchun ism va parolingizni kiriting</p>
+            </div>
+
+            <form onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Ism</label>
+                    <input type="text" id="login-input" placeholder="Ismingizni kiriting" required class="w-full p-3 rounded-xl border border-gray-200 text-xs focus:border-brandAccent focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">Parol</label>
+                    <input type="password" id="password-input" placeholder="••••••••" required class="w-full p-3 rounded-xl border border-gray-200 text-xs focus:border-brandAccent focus:outline-none">
+                </div>
+                <button type="submit" class="w-full bg-brandPrimary text-white font-bold py-3.5 rounded-xl text-xs hover:bg-brandSecondary transition shadow-lg mt-2">
+                    Xavfsiz Kirish
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandPrimary text-white py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-400">
+            <p>© 2026 Javohir Star Tex. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- SCRIPT LOGIKASI -->
+    <script>
+        let isAdmin = false;
+
+        let promoList = [{
+            code: "JAVOHIR20",
+            percent: 20
+        }];
+
+        let sliderProducts = [{
+            id: 1,
+            title: "Momiqcha",
+            category: "Yopinchiq",
+            price: 100000,
+            desc: "100% Satin ipak aralashmali nozik mato va yumshoq tekstura.",
+            image: "https://i.postimg.cc/j22ZcH0L/photo-2026-08-16-07-21-32.jpg"
+        }, {
+            id: 2,
+            title: "Shuba ko'rpa",
+            category: "Yopinchiq",
+            price: 210000,
+            desc: "Maksimal salqinlik beruvchi va gipoallergenik xususiyat.",
+            image: "https://i.postimg.cc/hGRZnQTF/photo-2026-08-16-07-21-36.jpg"
+        }, {
+            id: 3,
+            title: "Anatomik Bosh Yostiq",
+            category: "Yostiq",
+            price: 120000,
+            desc: "Sog'lom uyqu va umurtqa pog'onasi salomatligi uchun ideal.",
+            image: "https://i.postimg.cc/ZRTfBkfm/photo-2026-08-16-07-21-33.jpg"
+        }, {
+            id: 4,
+            title: "Ugalok chexol",
+            category: "Chexol",
+            price: 330000,
+            desc: "Sifatli, chiroyli va hamyonbob mahsulot ugalokni mustahkam himoyalaydi",
+            image: "https://i.postimg.cc/RV3gnLTq/photo-2026-08-16-07-21-29.jpg"
+        }];
+
+        let swiperInstance = null;
+
+        function initSwiper() {
+            swiperInstance = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                grabCursor: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    },
+                },
+            });
+        }
+
+        function renderSliderItems() {
+            const wrapper = document.getElementById('swiper-dynamic-wrapper');
+            wrapper.innerHTML = sliderProducts.map(item => `
+                <div class="swiper-slide bg-brandBg p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                    <img src="${item.image}" class="w-full h-48 object-cover rounded-xl mb-4" alt="${sanitizeInput(item.title)}">
+                    <span class="text-xs font-bold text-brandAccent uppercase tracking-wide">${sanitizeInput(item.category)}</span>
+                    <h4 class="font-bold text-lg text-brandPrimary mt-1">${sanitizeInput(item.title)}</h4>
+                    <p class="text-xs text-gray-500 mt-1 mb-4 leading-relaxed">${sanitizeInput(item.desc)}</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-black text-brandPrimary text-lg">${Number(item.price).toLocaleString()} UZS</span>
+                        <button onclick="addToCart(${item.id})" class="bg-brandPrimary text-white px-3.5 py-2 rounded-lg text-xs font-bold hover:bg-brandSecondary transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Savat</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            if (swiperInstance) swiperInstance.destroy(true, true);
+            initSwiper();
+        }
+
+        function setPresetPromo(code, percent) {
+            document.getElementById('admin-promo-name').value = code;
+            document.getElementById('admin-promo-percent').value = percent;
+        }
+
+        function createPromoCode() {
+            if (!isAdmin) return;
+            const codeInput = document.getElementById('admin-promo-name').value.trim().toUpperCase();
+            const percentInput = Number(document.getElementById('admin-promo-percent').value);
+
+            if (codeInput && percentInput > 0) {
+                const existingIndex = promoList.findIndex(p => p.code === codeInput);
+                if (existingIndex !== -1) {
+                    promoList[existingIndex].percent = percentInput;
+                } else {
+                    promoList.push({
+                        code: codeInput,
+                        percent: percentInput
+                    });
+                }
+
+                renderAdminPromoList();
+                document.getElementById('admin-promo-name').value = '';
+                document.getElementById('admin-promo-percent').value = '';
+
+                alert(`Muvaffaqiyatli! '${codeInput}' promokodi (${percentInput}% chegirma) faollashtirildi.`);
+            }
+        }
+
+        function renderAdminPromoList() {
+            const container = document.getElementById('promo-list-container');
+            const badge = document.getElementById('promo-count-badge');
+            badge.innerText = `${promoList.length} ta`;
+
+            if (promoList.length === 0) {
+                container.innerHTML = `<p class="text-[11px] text-gray-400 italic">Aktiv promokod yo'q.</p>`;
+                return;
+            }
+
+            container.innerHTML = promoList.map((promo, index) => `
+                <div class="flex justify-between items-center bg-brandBg p-2 rounded-xl border border-gray-200">
+                    <div>
+                        <span class="font-mono font-bold text-xs text-brandPrimary">${promo.code}</span>
+                        <span class="text-[10px] text-green-600 font-bold ml-2">-${promo.percent}%</span>
+                    </div>
+                    <button onclick="deletePromo(${index})" class="text-red-400 hover:text-red-600 text-xs px-2 py-0.5 rounded" title="O'chirish">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function deletePromo(index) {
+            if (confirm(`'${promoList[index].code}' promokodini o'chirmoqchimisiz?`)) {
+                promoList.splice(index, 1);
+                renderAdminPromoList();
+            }
+        }
+
+        function saveBotSettings() {
+            alert("Telegram Bot sozlamalari muvaffaqiyatli saqlandi!");
+        }
+
+        function applyPromoCode() {
+            const userInput = document.getElementById('user-promo-input').value.trim().toUpperCase();
+            const msgBox = document.getElementById('promo-result-message');
+            msgBox.classList.remove('hidden');
+
+            if (!userInput) {
+                msgBox.className = "text-xs font-bold text-red-400";
+                msgBox.innerText = "Iltimos, promokodni kiriting!";
+                return;
+            }
+
+            const matchedPromo = promoList.find(p => p.code === userInput);
+
+            if (matchedPromo) {
+                msgBox.className = "text-xs font-bold text-green-400";
+                msgBox.innerText = `Tabriklaymiz! '${matchedPromo.code}' promokodi qabul qilindi. Sizga ${matchedPromo.percent}% chegirma berildi!`;
+            } else {
+                msgBox.className = "text-xs font-bold text-red-400";
+                msgBox.innerText = "Noto'g'ri promokod! Telegram kanaldagi promokodni kiriting.";
+            }
+        }
+
+        function addNewSlideFromForm() {
+            if (!isAdmin) return;
+            const newSlide = {
+                id: Date.now(),
+                title: document.getElementById('new-title').value,
+                category: document.getElementById('new-category').value,
+                price: Number(document.getElementById('new-price').value),
+                image: document.getElementById('new-image').value,
+                desc: document.getElementById('new-desc').value
+            };
+
+            sliderProducts.unshift(newSlide);
+            renderSliderItems();
+            toggleAdminPanel();
+        }
+
+        function toggleAdminPanel() {
+            if (!isAdmin) {
+                alert("Tizimga admin sifatida kirmagansiz!");
+                return;
+            }
+            document.getElementById('admin-panel').classList.toggle('hidden');
+        }
+
+        function startCounterAnimation() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                const updateCount = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.innerText = Math.ceil(current).toLocaleString() + "+";
+                        setTimeout(updateCount, 16);
+                    } else {
+                        counter.innerText = target.toLocaleString() + "+";
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        function openLoginModal() {
+            const modal = document.getElementById('login-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        }
+
+        function closeLoginModal() {
+            const modal = document.getElementById('login-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const login = document.getElementById('login-input').value.trim();
+            const password = document.getElementById('password-input').value.trim();
+
+            if (login === "Javohir" && password === "788wua") {
+                isAdmin = true;
+                alert("Xush kelibsiz, Javohir! Barcha admin imkoniyatlari faollashtirildi.");
+                const adminBtn = document.getElementById('admin-btn');
+                if (adminBtn) adminBtn.classList.remove('hidden');
+                renderAdminPromoList();
+                closeLoginModal();
+            } else {
+                isAdmin = false;
+                alert("Xatolik: Ism yoki parol noto'g'ri!");
+            }
+        }
+
+        function sanitizeInput(str) {
+            const temp = document.createElement('div');
+            temp.textContent = str;
+            return temp.innerHTML;
+        }
+
+        function addToCart(id) {
+            const product = sliderProducts.find(p => p.id === id);
+            alert(`Savatga qo'shildi: ${product.title}`);
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            alert("Xabaringiz muvaffaqiyatli yuborildi!");
+            event.target.reset();
+        }
+
+        // INSPECT ELEMENT HIMOYASI
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.keyCode === 123 ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+                (e.ctrlKey && (e.keyCode === 85 || e.keyCode === 83))) {
+                e.preventDefault();
+                return false;
+            }
+        });
+        document.addEventListener('dragstart', e => e.preventDefault());
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSliderItems();
+            startCounterAnimation();
+            renderAdminPromoList();
+        });
+    </script>
+</body>
+
+</html>
